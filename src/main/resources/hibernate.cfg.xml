@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Подключение к базе -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/logistics_company</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">12345</property>
+
+        <!-- Диалект для PostgreSQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Автоматическое обновление схемы -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Логирование SQL -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Классы-сущности -->
+        <mapping class="com.example.logistics.model.Client"/>
+
+    </session-factory>
+</hibernate-configuration>
